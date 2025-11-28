@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Student Form For Access Checking {% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="info">Ввід інформації про студента</h1>
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Обрахувати">
+    </form>
+{% endblock %}

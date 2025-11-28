@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{%  load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>{{ full_name }}</h1>
+<h1>{{ message1 }}</h1>
+<h2>{{ message2 }}</h2>
+    Прізвище: {{ student.surname }}<br>
+    Ім'я: {{ student.name }}<br>
+    По батькові: {{ student.middle_name }}<br>
+    Шифр групи: {{ student.group_code }}<br>
+    Обрана дисципліна: {{ student.course }}<br>
+    Середнє арифметичне в 5-бальній системі: {{ student.average_five }}<br>
+    Середнє арифметичне в 60-бальній системі: {{ student.average_sixty }}<br>
+    Статус допуску:
+{% if student.status %}
+    Допущено
+{% else %}
+    Не допущено
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/1-index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="description">Вітаю тебе, студенте Університету Короля Данила</h1>
+    <p class="description">
+        {{ message }}
+    </p>
+{% endblock %}

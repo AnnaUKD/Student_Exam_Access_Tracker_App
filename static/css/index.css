@@ -1,0 +1,9 @@
+html, body {
+height: 100%;
+margin: 0;
+}
+body{
+    background: linear-gradient(#7D2132, #FCF2F5);
+    font-family: "JetBrains Mono", monospace;
+    color: #FFC9C9;
+}
