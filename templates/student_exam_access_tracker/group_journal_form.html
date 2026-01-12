@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="info">Створення нового журналу</h1>
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Створити журнал">
+    </form>
+{% endblock %}

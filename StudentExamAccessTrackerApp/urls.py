@@ -22,4 +22,8 @@ urlpatterns = [
     path('', views.student_view, name='index'),
     path('result/', views.result_view, name='result'),
     path('student_form/', views.check_student_view, name='student_form'),
+    path('group_journals/', views.get_group_journals_view, name='group_journals_list'),
+    path('group_journal/<int:pk>/', views.get_group_journal_view, name='group_journal_detail'),
+    path('group_journal/create/', views.create_group_journal_view, name='group_journal_create'),
+    path('group_journal/update/<int:pk>/', views.update_group_journal_view, name='group_journal_update'),
 ]
