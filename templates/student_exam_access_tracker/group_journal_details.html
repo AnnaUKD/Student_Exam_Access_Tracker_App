@@ -7,5 +7,10 @@
 
 {% block content %}
     {{ data }}
+    <a href="{% url 'group_journal_update' pk=data.id %}">Update journal info</a>
+    <form action="{% url 'group_journal_delete' pk=data.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" onclick="return confirm('Are you sure about this?')">Delete journal</button>
+    </form>
 
 {% endblock %}

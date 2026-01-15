@@ -26,4 +26,5 @@ urlpatterns = [
     path('group_journal/<int:pk>/', views.get_group_journal_view, name='group_journal_detail'),
     path('group_journal/create/', views.create_group_journal_view, name='group_journal_create'),
     path('group_journal/update/<int:pk>/', views.update_group_journal_view, name='group_journal_update'),
+    path('group_journal/delete/<int:pk>/', views.delete_group_journal_view, name='group_journal_delete'),
 ]

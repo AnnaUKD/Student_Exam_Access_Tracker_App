@@ -7,6 +7,7 @@ from .forms import StudentInfoForm, GroupJournalForm
 from .services.student_service import get_student_info, student_app_functional
 from django.urls import reverse
 from core.models import GroupJournal
+from django.views.decorators.http import require_POST
 # Create your views here.
 
 
@@ -96,3 +97,9 @@ def update_group_journal_view(request, pk: int):
         'form': form,
     }
     return render(request=request, template_name='student_exam_access_tracker/group_journal_form.html', context=context)
+
+@require_POST
+def delete_group_journal_view(request, pk: int):
+    group_journal = get_object_or_404(klass=GroupJournal, pk=pk)
+    group_journal.delete()
+    return redirect('group_journals_list')

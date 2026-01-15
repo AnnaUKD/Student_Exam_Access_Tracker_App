@@ -7,7 +7,7 @@
 
 {% block content %}
     {% for info in data %}
-        | {{ info }}
+        | <a href="{% url 'group_journal_detail' pk=info.id %}">{{ info.group_name }}</a>
     {% endfor %}
 
 {% endblock %}
